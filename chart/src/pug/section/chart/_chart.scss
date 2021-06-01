@@ -1,0 +1,162 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	body {
+		background-color: #f2f2f2;
+	}
+	.main_container {
+		@extend %flex_column;
+		width: 90%;
+		margin: 105px 40px 40px 135px;
+		height: 90vh;
+		.main_container-carts {
+			display: flex;
+			justify-content: space-between;
+			.cart {
+				@extend %flex_column;
+				width: 448px;
+				height: 270px;
+				background-color: #fff;
+				padding: 30px;
+				border-radius: 10px;
+				.img_content {
+					display: flex;
+					justify-content: space-between;
+					.users {
+						position: relative;
+						.user {
+							margin-right: 6px;
+						}
+						.plus {
+							position: absolute;
+							top: 13px;
+							right: 19px;
+						}
+					}
+				}
+				.title_content {
+					display: flex;
+					justify-content: space-between;
+					h1 {
+						font-size: 22px;
+					}
+					span {
+						font-size: 22px;
+						color: #ff3a29;
+					}
+				}
+				.text {
+					p {
+						line-height: 20px;
+						width: 350px;
+						color: rgba(0, 0, 0, 0.487);
+					}
+				}
+				.img_content {
+					margin-top: 30px;
+					.plus {
+						position: absolute;
+						right: 13px;
+						top: 13px;
+					}
+				}
+
+				.button_container {
+					.btn1 {
+						background-color: #dad7fe;
+						@extend %btn;
+					}
+					.btn2 {
+						background-color: #ffe5d3;
+						@extend %btn;
+					}
+					.btn3 {
+						background-color: #e2fbd7;
+						@extend %btn;
+					}
+					.btn4 {
+						background-color: #fff5cc;
+						@extend %btn;
+					}
+					.btn5 {
+						background-color: #ccf8fe;
+						@extend %btn;
+					}
+					.btn6 {
+						background-color: #ffe5d3;
+						@extend %btn;
+					}
+					.btn7 {
+						background-color: #e2fbd7;
+						@extend %btn;
+					}
+				}
+			}
+		}
+		.title {
+			margin-top: 10px;
+			h1 {
+				font-size: 22px;
+			}
+		}
+		.subTitle {
+			margin-top: 6px;
+			p {
+				font-size: 14px;
+				color: rgba(0, 0, 0, 0.678);
+			}
+		}
+		.canvas {
+			width: 100%;
+
+			#myChart {
+				width: 100% !important;
+				max-height: 500px !important;
+			}
+		}
+		@media screen and (max-width:1024px) {
+			.main_container-carts {
+				justify-content: center;
+				flex-wrap: wrap;
+				// justify-content: space-between;
+				.cart {
+					margin: 20px 20px 0 0;
+				}
+			
+		}
+	}
+		@media screen and (max-width:700px) {
+			.main_container {
+				display: flex;
+				flex-direction: column;
+				// justify-content: space-between;
+				flex-wrap: wrap;
+				.cart {
+					width: 100%;
+				}
+				.canvas {
+					width: 100%;
+				}
+		}
+			
+		}
+		@media screen and (max-width: 520px) {
+			.main_container-carts {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				flex-wrap: wrap;
+				// justify-content: space-between;
+				.cart {
+					width: 100%;
+				}
+				.canvas {
+					width: 100%;
+				}
+		}
+			
+		}
+	}
+	}
+

@@ -1,0 +1,11 @@
+// stylelint-disable no-empty-source
+%flex_column {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+%btn {
+	border: none;
+	padding: 5px 10px;
+	border-radius: 6px;
+}

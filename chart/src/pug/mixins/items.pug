@@ -1,0 +1,59 @@
+mixin item(param,title, price, text)
+    - var src = "../../img/sprite/svg/"
+    - var imgGroup = src + "Group.svg"
+    - var plus = src + "plus.svg"
+    - var img1 = [src + "user1.svg", src + "user2.svg", src + "user3.svg", src + "Color.svg"]
+    - var img2 = [src + "user4.svg", src + "Color.svg"]
+    - var img3 = [src + "user5.svg", src + "user6.svg", src + "Color.svg"]
+    - var btns1 = {btn1: "Lost",btn2: "Designer", btn3:"Hobbie"}
+    - var btns2 = {btn4: "Progect",btn5: "Digital"}
+    - var btns3 = {btn6: "Lost",btn7: "Designer"}
+
+    .cart 
+        .button_container 
+            - var btn = param
+            case btn 
+                when 5
+                    each btn, key in btns1
+                        button(class=`${key}`)= btn
+                when 3
+                    each btn, key in btns2
+                        button(class=`${key}`)= btn
+                when 4
+                    each btn, key in btns3
+                        button(class=`${key}`)= btn
+        .title_content 
+            h1= title 
+            span= price 
+        .text 
+            p= text 
+        .img_content  
+            - var img = param
+            case img
+                when 5
+                    .users
+                        - for(var i=0;i<img1.length;i++){
+                            img(src=img1[i], alt="", class="user")
+                        -} 
+                        img(src=plus, alt="plus" class="plus")
+                    .logo
+                        img(src= imgGroup , alt="logo") 
+                when 3
+                    .users   
+                        - for(var i=0;i<img2.length;i++){
+                            img(src=img2[i], alt="", class="user")
+                        -}
+                        img(src=plus, alt="plus" class="plus")
+                    .logo
+                        img(src= imgGroup , alt="logo")        
+                when 4
+                    .users
+                        - for(var i=0;i<img3.length;i++){
+                            img(src=img3[i], alt="", class="user")
+                        - }
+                        img(src=plus, alt="plus" class="plus")
+                    .logo
+                        img(src= imgGroup , alt="logo")
+                    - break;
+                default
+                    null 
